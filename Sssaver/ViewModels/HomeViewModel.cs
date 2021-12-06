@@ -14,7 +14,7 @@ namespace Sssaver.ViewModels
 
         public HomeViewModel(SavingsPlan savingsPlan = null)    
         {
-            if (savingsPlan != null)
+            if (savingsPlan == null)
             {
                 // if no savingsPlan is passed into the constructor,
                 // then create one. This is for demo purposes.

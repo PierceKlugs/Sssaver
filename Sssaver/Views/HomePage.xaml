@@ -2,47 +2,45 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:vm="clr-namespace:Sssaver.ViewModels"
-    Title="$ssaver"
+    Title="Sssaver"
     x:Class="Sssaver.Views.HomePage"
     BackgroundColor="{StaticResource White}"
     >
 
     <ContentPage.Content>
         <ScrollView >
-            <Grid Padding="16" RowSpacing="8">
+             <Grid Padding="0" RowSpacing="0">
 
-                <Grid Grid.Row="0"
-                      BackgroundColor="{StaticResource LightGreen}">
+                <Grid Grid.Row="0">
+                    <Path HeightRequest="320"  Fill="{StaticResource DarkMode}" Stroke="{StaticResource DarkMode}" Aspect="Fill" Data="m168.15999,142.29l330.99996,0l0,235.56632c-161.49998,-45 -165.49998,89.75509 -330.99996,38.75789l0,-274.32421z"></Path>
                     <StackLayout>
 
-                        <Label Text="Progress" FontSize="Medium" />
+                        <Label BindingContext="{x:Binding SavingsPlan.Name}" Text="{Binding StringFormat='{0} Plan'}" FontFamily="OsBold" FontSize="45" TextColor="{StaticResource White}" HorizontalOptions="CenterAndExpand" Margin="25 0 0 0"/>
 
-                        <Label Text="{Binding SavingsPlan.Name}" FontSize="Large" />
-
-                        <Label Text="{Binding SavingsPlan.Days}" FontSize="Large" />
+                        <Label BindingContext="{x:Binding SavingsPlan.Days}" Text="{Binding StringFormat='Days Remaining: {0}'}" FontFamily="OsLight" FontSize="Medium" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource White}"/>
 
 
-                        <Label Text="{Binding SavingsPlan.CurrentSavingsAmount}" FontSize="Medium" />
+                        <Label Text="{Binding SavingsPlan.CurrentSavingsAmount}" FontFamily="Os" HorizontalOptions="CenterAndExpand" FontSize="Medium" TextColor="{StaticResource White}"/>
 
-                        <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" FontSize="Medium" />
-
-
+                        <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" FontFamily="Os" HorizontalOptions="CenterAndExpand" FontSize="Medium" TextColor="{StaticResource White}"/>
+                        
                     </StackLayout>
 
                 </Grid>
+                
 
                 <Grid Grid.Row="1"
-                      BackgroundColor="{StaticResource Secondary}">
+                      BackgroundColor="{StaticResource White}">
 
-                    <Label Text="Today's Challenge" FontSize="Medium" />
-
+                    <Label Text="Today's Savings Challenge" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Margin="30" />
+                    <Button Text="?" CornerRadius="10" FontSize="50" WidthRequest="300" HeightRequest="100" TextColor="{StaticResource DarkMode}" BackgroundColor="{StaticResource LightGreen}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Command="{Binding ChallengeClick}" />
 
                 </Grid>
 
                 <Grid Grid.Row="2"
-                      BackgroundColor="{StaticResource Tertiary}">
-
-                    <Label Text="Goal" FontSize="Medium" />
+                      BackgroundColor="{StaticResource White}">
+                    <Label Text="Goal" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Margin="30" />
+                    
 
 
                 </Grid>
@@ -50,10 +48,13 @@
                 <Grid Grid.Row="3"
                       BackgroundColor="{StaticResource White}">
 
-                    <Label Text="History" FontSize="Medium" />
+                    <Label Text="History" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Margin="30" />
 
 
                 </Grid>
+
+                
+ 
 
             </Grid>
         </ScrollView>

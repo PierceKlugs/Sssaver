@@ -6,6 +6,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Fonts\Oswald-Bold.ttf" />
+    <None Remove="Resources\Fonts\Oswald-ExtraLight.ttf" />
+    <None Remove="Resources\Fonts\Oswald-Light.ttf" />
+    <None Remove="Resources\Fonts\Oswald-Medium.ttf" />
+    <None Remove="Resources\Fonts\Oswald-Regular.ttf" />
+    <None Remove="Resources\Fonts\Oswald-SemiBold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\Oswald-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Oswald-ExtraLight.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Oswald-Light.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Oswald-Medium.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Oswald-Regular.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Oswald-SemiBold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>

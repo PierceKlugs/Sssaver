@@ -14,6 +14,7 @@ namespace Sssaver.Views
             InitializeComponent();
 
             BindingContext = homeViewModel = new HomeViewModel();
+
         }
 
     }
