@@ -12,35 +12,43 @@
              <Grid Padding="0" RowSpacing="0">
 
                 <Grid Grid.Row="0">
-                    <Path HeightRequest="320"  Fill="{StaticResource DarkMode}" Stroke="{StaticResource DarkMode}" Aspect="Fill" Data="m168.15999,142.29l330.99996,0l0,235.56632c-161.49998,-45 -165.49998,89.75509 -330.99996,38.75789l0,-274.32421z"></Path>
+                    <Path HeightRequest="320"  Fill="{StaticResource DarkMode}" Stroke="{StaticResource DarkMode}" Aspect="Fill" Data="m168.15999,142.29l330.99996,0l0,235.56632c-161.49998,-45 -165.49998,89.75509 -600.99996,38.75789l0,-274.32421z"></Path>
                     <StackLayout>
 
-                        <Label BindingContext="{x:Binding SavingsPlan.Name}" Text="{Binding StringFormat='{0} Plan'}" FontFamily="OsBold" FontSize="45" TextColor="{StaticResource White}" HorizontalOptions="CenterAndExpand" Margin="25 0 0 0"/>
+                        <Label BindingContext="{x:Binding SavingsPlan.PercentSavingsStr}" Text="{Binding StringFormat=' {0}%'}" FontFamily="OsBold" HorizontalOptions="CenterAndExpand" FontSize="90" TextColor="{StaticResource White}" Padding="0, 20, 0, 0"/>
+                        <Label BindingContext="{x:Binding SavingsPlan.Name}" Text="{Binding StringFormat='{0} Plan'}" FontFamily="OsMed" FontSize="30" TextColor="{StaticResource LightGreen}" HorizontalOptions="CenterAndExpand" Padding="0, -10, 0, 0"/>
+                        <Label BindingContext="{x:Binding SavingsPlan.Days}" Text="{Binding StringFormat='Days Remaining: {0}'}" FontFamily="OsLight" FontSize="Small" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource Primary}" Padding="0, -5, 0, 0"/>
+                        <Label BindingContext="{x:Binding SavingsPlan.CurrentSavingsAmount}" Text="{Binding StringFormat='${0} Saved'}" FontFamily="OsLight" HorizontalOptions="CenterAndExpand" FontSize="Small" TextColor="{StaticResource Primary}" Padding="0, -5, 0, 0"/>
 
-                        <Label BindingContext="{x:Binding SavingsPlan.Days}" Text="{Binding StringFormat='Days Remaining: {0}'}" FontFamily="OsLight" FontSize="Medium" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource White}"/>
-
-
-                        <Label Text="{Binding SavingsPlan.CurrentSavingsAmount}" FontFamily="Os" HorizontalOptions="CenterAndExpand" FontSize="Medium" TextColor="{StaticResource White}"/>
-
-                        <Label Text="{Binding SavingsPlan.PercentSavingsCompleted}" FontFamily="Os" HorizontalOptions="CenterAndExpand" FontSize="Medium" TextColor="{StaticResource White}"/>
-                        
                     </StackLayout>
 
                 </Grid>
-                
+
 
                 <Grid Grid.Row="1"
-                      BackgroundColor="{StaticResource White}">
+                      BackgroundColor="{StaticResource White}" Margin="0, 0, 0, 0">
+                    <Grid Margin="0, 30, 0, 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="100"/>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Today's Savings Challenge" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Padding="0, 20, 0, 0"/>
+                        <Button Grid.Row ="1" x:Name="challengeBtn"  Text="?" CornerRadius="10" FontSize="50" WidthRequest="300" HeightRequest="100" TextColor="{StaticResource DarkMode}" BackgroundColor="{StaticResource LightGreen}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="ChallengeClicked"/>
+                        <Button Grid.Row ="2" x:Name="saveBtn"  Text="SAVE" CornerRadius="10" FontSize="50" WidthRequest="300" HeightRequest="100" TextColor="{StaticResource DarkMode}" BackgroundColor="{StaticResource LightGreen}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="SaveClicked" IsVisible="False" Padding="0, 0, 0, 0"/>
 
-                    <Label Text="Today's Savings Challenge" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Margin="30" />
-                    <Button Text="?" CornerRadius="10" FontSize="50" WidthRequest="300" HeightRequest="100" TextColor="{StaticResource DarkMode}" BackgroundColor="{StaticResource LightGreen}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Command="{Binding ChallengeClick}" />
 
+                    </Grid>
+                    
                 </Grid>
 
                 <Grid Grid.Row="2"
                       BackgroundColor="{StaticResource White}">
-                    <Label Text="Goal" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Margin="30" />
-                    
+                    <Label Text="Goal" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                    <Image Source="car.png" Scale=".75"></Image>
 
 
                 </Grid>
@@ -48,11 +56,14 @@
                 <Grid Grid.Row="3"
                       BackgroundColor="{StaticResource White}">
 
-                    <Label Text="History" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Margin="30" />
-
+                    <Label Text="History" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                    <Label Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                    <Label Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                    
+                    
 
                 </Grid>
-
+                
                 
  
 

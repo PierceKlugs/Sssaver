@@ -35,6 +35,8 @@ namespace Sssaver.Models
             }
         }
 
+        
+
         public double PercentSavingsCompleted
         {
             get
@@ -43,11 +45,28 @@ namespace Sssaver.Models
             }
         }
 
+        public String PercentSavingsStr
+        {
+            get {
+
+                return ((double)PercentSavingsCompleted * (double)100).ToString();
+            
+            }
+        
+        }
+
         public DateTime StartDate { get; set; }
 
         public DateTime EndDate { get; set; }
 
-        public List<SavingsChallenge> SavingsChallenges { get; set; }
+        public List<SavingsChallenge> SavingsChallenges
+        {
+            get {
+                return SavingsChallenges;
+            }
+
+        }
+
 
 
 
