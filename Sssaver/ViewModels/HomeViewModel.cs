@@ -8,7 +8,7 @@ namespace Sssaver.ViewModels
     {
         public SavingsPlan SavingsPlan { get; set; }
 
-        public decimal TodaysSavingsAmount { get { return 50; } set { } }
+        public decimal TodaysSavingsAmount { get; set; }
 
         public ObservableCollection<SavingsChallenge> SavingsHistory { get; set; }
 
@@ -22,17 +22,36 @@ namespace Sssaver.ViewModels
                 {
                     Days = 30,
                     Name = "Viper",
-                    CurrentSavingsAmount = 30,
-                    TotalSavingsAmount = 100
+                    CurrentSavingsAmount = 0,
+                    TotalSavingsAmount = 100,
+                    SavingsChallenges = new ObservableCollection<SavingsChallenge>()
                     
                 };
 
                 
 
+                Random random = new Random();
+                var date = DateTime.Today;
+                var amount = random.Next(5, (int)SavingsPlan.TotalSavingsAmount - (int)SavingsPlan.CurrentSavingsAmount);
+
+                while (amount + SavingsPlan.CurrentSavingsAmount > SavingsPlan.TotalSavingsAmount) {
+
+                    amount = random.Next(5, (int)SavingsPlan.TotalSavingsAmount - (int)SavingsPlan.CurrentSavingsAmount);
+
+                }
+
+                SavingsChallenge challenge = new SavingsChallenge(date, amount);
+                SavingsPlan.SavingsChallenges.Add(challenge);
+
+                TodaysSavingsAmount = challenge.Amount;
+
+                SavingsHistory = new ObservableCollection<SavingsChallenge>();
+
+
                 // Today's Savings Amount should be extracted from
                 // the SavingsChallenges list in the SavingsPlan.
-                
-                
+
+
 
 
 

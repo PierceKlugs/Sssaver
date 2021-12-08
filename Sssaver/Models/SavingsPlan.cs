@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -50,13 +51,8 @@ namespace Sssaver.Models
 
         public DateTime EndDate { get; set; }
 
-        public List<SavingsChallenge> SavingsChallenges
-        {
-            get {
-                return SavingsChallenges;
-            }
+        public ObservableCollection<SavingsChallenge> SavingsChallenges { get; set; }
 
-        }
 
 
 

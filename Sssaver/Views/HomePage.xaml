@@ -9,9 +9,9 @@
 
     <ContentPage.Content>
         <ScrollView >
-             <Grid Padding="0" RowSpacing="0">
+             <Grid Padding="0,0,0,20" RowSpacing="0">
 
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="0" HeightRequest="320">
                     <Path HeightRequest="320"  Fill="{StaticResource DarkMode}" Stroke="{StaticResource DarkMode}" Aspect="Fill" Data="m168.15999,142.29l330.99996,0l0,235.56632c-161.49998,-45 -165.49998,89.75509 -600.99996,38.75789l0,-274.32421z"></Path>
                     <StackLayout>
 
@@ -26,23 +26,16 @@
 
 
                 <Grid Grid.Row="1"
-                      BackgroundColor="{StaticResource White}" Margin="0, 0, 0, 0">
-                    <Grid Margin="0, 30, 0, 0">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="100"/>
-                            <RowDefinition Height="100"/>
-                            <RowDefinition Height="100"/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Today's Savings Challenge" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Padding="0, 20, 0, 0"/>
-                        <Button Grid.Row ="1" x:Name="challengeBtn"  Text="?" CornerRadius="10" FontSize="50" WidthRequest="300" HeightRequest="100" TextColor="{StaticResource DarkMode}" BackgroundColor="{StaticResource LightGreen}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="ChallengeClicked"/>
+                      BackgroundColor="{StaticResource White}" Padding="0, 30, 0, 0">
+
+                    <StackLayout>
+                        <Label Text="Today's Savings Challenge" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Padding="0, 0, 0, 0"/>
+                        <Button Grid.Row ="1" x:Name="challengeBtn"  Text="?" CornerRadius="10" FontSize="50" WidthRequest="300" HeightRequest="100" TextColor="{StaticResource DarkMode}" BackgroundColor="{StaticResource LightGreen}" Padding="0, 0, 0, 0" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="ChallengeClicked"/>
                         <Button Grid.Row ="2" x:Name="saveBtn"  Text="SAVE" CornerRadius="10" FontSize="50" WidthRequest="300" HeightRequest="100" TextColor="{StaticResource DarkMode}" BackgroundColor="{StaticResource LightGreen}" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Clicked="SaveClicked" IsVisible="False" Padding="0, 0, 0, 0"/>
+                    </StackLayout>
 
 
-                    </Grid>
-                    
+
                 </Grid>
 
                 <Grid Grid.Row="2"
@@ -52,30 +45,20 @@
 
 
                 </Grid>
-                 
+
 
                 <Grid Grid.Row="3"
                       BackgroundColor="{StaticResource White}">
-                    <Label Grid.Row="0" Text="History" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" />
-                    <Grid x:Name="historyTable">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="75"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="50"/>
-                            
-                        </Grid.RowDefinitions>
+                    <Label  Text="History" HeightRequest="30" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" Margin="0,0,0,0"/>
+                    <Grid x:Name="historyTable" HorizontalOptions="CenterAndExpand" Margin="20, -200, 20, 0">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
+                        
+                        
+                    
 
-                        <Label Grid.Row="1" Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
-                        <Label Grid.Row="1" Grid.Column="1" Text="$20" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
-                        <Label Grid.Row="2" Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
-                        <Label Grid.Row="2" Grid.Column="1" Text="$20" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
-                        <Label Grid.Row="3" Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
-                        <Label Grid.Row="3" Grid.Column="1" Text="$20" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
 
 
 
