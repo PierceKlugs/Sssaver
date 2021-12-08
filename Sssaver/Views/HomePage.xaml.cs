@@ -31,7 +31,7 @@ namespace Sssaver.Views
         private void SaveClicked(object sender, EventArgs e)
         {
             saveBtn.IsVisible = false;
-            homeViewModel.SavingsHistory.Add(homeViewModel.SavingsPlan.SavingsChallenges[0]);
+            homeViewModel.SavingsPlan.CurrentSavingsAmount += homeViewModel.TodaysSavingsAmount;
             
         }
     }

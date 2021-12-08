@@ -41,19 +41,10 @@ namespace Sssaver.Models
         {
             get
             {
-                return (double)CurrentSavingsAmount / (double)TotalSavingsAmount;
+                return (double)CurrentSavingsAmount / (double)TotalSavingsAmount * 100;
             }
         }
 
-        public String PercentSavingsStr
-        {
-            get {
-
-                return ((double)PercentSavingsCompleted * (double)100).ToString();
-            
-            }
-        
-        }
 
         public DateTime StartDate { get; set; }
 

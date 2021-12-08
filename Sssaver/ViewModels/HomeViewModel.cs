@@ -8,8 +8,8 @@ namespace Sssaver.ViewModels
     {
         public SavingsPlan SavingsPlan { get; set; }
 
-        public decimal TodaysSavingsAmount { get; set; }
-        
+        public decimal TodaysSavingsAmount { get { return 50; } set { } }
+
         public ObservableCollection<SavingsChallenge> SavingsHistory { get; set; }
 
         public HomeViewModel(SavingsPlan savingsPlan = null)    

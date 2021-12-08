@@ -15,7 +15,7 @@
                     <Path HeightRequest="320"  Fill="{StaticResource DarkMode}" Stroke="{StaticResource DarkMode}" Aspect="Fill" Data="m168.15999,142.29l330.99996,0l0,235.56632c-161.49998,-45 -165.49998,89.75509 -600.99996,38.75789l0,-274.32421z"></Path>
                     <StackLayout>
 
-                        <Label BindingContext="{x:Binding SavingsPlan.PercentSavingsStr}" Text="{Binding StringFormat=' {0}%'}" FontFamily="OsBold" HorizontalOptions="CenterAndExpand" FontSize="90" TextColor="{StaticResource White}" Padding="0, 20, 0, 0"/>
+                        <Label BindingContext="{x:Binding SavingsPlan.PercentSavingsCompleted}" Text="{Binding StringFormat=' {0}%'}" FontFamily="OsBold" HorizontalOptions="CenterAndExpand" FontSize="90" TextColor="{StaticResource White}" Padding="0, 20, 0, 0"/>
                         <Label BindingContext="{x:Binding SavingsPlan.Name}" Text="{Binding StringFormat='{0} Plan'}" FontFamily="OsMed" FontSize="30" TextColor="{StaticResource LightGreen}" HorizontalOptions="CenterAndExpand" Padding="0, -10, 0, 0"/>
                         <Label BindingContext="{x:Binding SavingsPlan.Days}" Text="{Binding StringFormat='Days Remaining: {0}'}" FontFamily="OsLight" FontSize="Small" HorizontalOptions="CenterAndExpand" TextColor="{StaticResource Primary}" Padding="0, -5, 0, 0"/>
                         <Label BindingContext="{x:Binding SavingsPlan.CurrentSavingsAmount}" Text="{Binding StringFormat='${0} Saved'}" FontFamily="OsLight" HorizontalOptions="CenterAndExpand" FontSize="Small" TextColor="{StaticResource Primary}" Padding="0, -5, 0, 0"/>
@@ -52,15 +52,34 @@
 
 
                 </Grid>
+                 
 
                 <Grid Grid.Row="3"
                       BackgroundColor="{StaticResource White}">
+                    <Label Grid.Row="0" Text="History" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                    <Grid x:Name="historyTable">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="75"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            <RowDefinition Height="50"/>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                    <Label Text="History" TextColor="{StaticResource DarkMode}" FontFamily="OsBold" FontSize="30" HorizontalOptions="CenterAndExpand" />
-                    <Label Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
-                    <Label Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
-                    
-                    
+                        <Label Grid.Row="1" Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                        <Label Grid.Row="1" Grid.Column="1" Text="$20" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                        <Label Grid.Row="2" Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                        <Label Grid.Row="2" Grid.Column="1" Text="$20" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                        <Label Grid.Row="3" Text="Date" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
+                        <Label Grid.Row="3" Grid.Column="1" Text="$20" TextColor="{StaticResource DarkMode}" FontFamily="OsLight" FontSize="30" HorizontalOptions="CenterAndExpand" />
+
+
+
+                    </Grid>
 
                 </Grid>
                 
